@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ttsreURCMvVsZ7+5TZZP0NkaeEE8yVf94Nq/tN08XsWWDLKkoF4JqB98opci+4OARIBAYJEvDmgK8uhXN/fQwg==",
+  "success": true,
+  "projectFilePath": "E:\\Adify\\Adify\\Adify.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\joelt\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.17\\microsoft.netcore.app.host.win-x64.3.1.17.nupkg.sha512"
+  ],
+  "logs": []
+}
