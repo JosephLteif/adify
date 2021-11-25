@@ -18,5 +18,9 @@ using Adify.Models;
 
         public DbSet<Adify.Models.Ad> Ad { get; set; }
 
-        public DbSet<Adify.Models.UserEntity> UserEntity { get; set; }
+        public DbSet<Adify.Models.Campaign> Campaign { get; set; }
+
+        public DbSet<Adify.Models.Click> Click { get; set; }
+
+        public DbSet<Adify.Models.View> View { get; set; }
     }

@@ -11,48 +11,48 @@ namespace Adify.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserEntitiesController : ControllerBase
+    public class ViewsController : ControllerBase
     {
         private readonly DbContext _context;
 
-        public UserEntitiesController(DbContext context)
+        public ViewsController(DbContext context)
         {
             _context = context;
         }
 
-        // GET: api/UserEntities
+        // GET: api/Views
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserEntity>>> GetUserEntity()
+        public async Task<ActionResult<IEnumerable<View>>> GetView()
         {
-            return await _context.UserEntity.ToListAsync();
+            return await _context.View.ToListAsync();
         }
 
-        // GET: api/UserEntities/5
+        // GET: api/Views/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserEntity>> GetUserEntity(int id)
+        public async Task<ActionResult<View>> GetView(string id)
         {
-            var userEntity = await _context.UserEntity.FindAsync(id);
+            var view = await _context.View.FindAsync(id);
 
-            if (userEntity == null)
+            if (view == null)
             {
                 return NotFound();
             }
 
-            return userEntity;
+            return view;
         }
 
-        // PUT: api/UserEntities/5
+        // PUT: api/Views/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUserEntity(int id, UserEntity userEntity)
+        public async Task<IActionResult> PutView(string id, View view)
         {
-            if (id != userEntity.Id)
+            if (id != view.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(userEntity).State = EntityState.Modified;
+            _context.Entry(view).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace Adify.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserEntityExists(id))
+                if (!ViewExists(id))
                 {
                     return NotFound();
                 }
@@ -73,37 +73,51 @@ namespace Adify.Controllers
             return NoContent();
         }
 
-        // POST: api/UserEntities
+        // POST: api/Views
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<UserEntity>> PostUserEntity(UserEntity userEntity)
+        public async Task<ActionResult<View>> PostView(View view)
         {
-            _context.UserEntity.Add(userEntity);
-            await _context.SaveChangesAsync();
+            _context.View.Add(view);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (ViewExists(view.Id))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-            return CreatedAtAction("GetUserEntity", new { id = userEntity.Id }, userEntity);
+            return CreatedAtAction("GetView", new { id = view.Id }, view);
         }
 
-        // DELETE: api/UserEntities/5
+        // DELETE: api/Views/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<UserEntity>> DeleteUserEntity(int id)
+        public async Task<ActionResult<View>> DeleteView(string id)
         {
-            var userEntity = await _context.UserEntity.FindAsync(id);
-            if (userEntity == null)
+            var view = await _context.View.FindAsync(id);
+            if (view == null)
             {
                 return NotFound();
             }
 
-            _context.UserEntity.Remove(userEntity);
+            _context.View.Remove(view);
             await _context.SaveChangesAsync();
 
-            return userEntity;
+            return view;
         }
 
-        private bool UserEntityExists(int id)
+        private bool ViewExists(string id)
         {
-            return _context.UserEntity.Any(e => e.Id == id);
+            return _context.View.Any(e => e.Id == id);
         }
     }
 }

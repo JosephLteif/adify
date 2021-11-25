@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Adify.Migrations
 {
     [DbContext(typeof(DbContext))]
-    [Migration("20211124190233_secondMigration")]
-    partial class secondMigration
+    [Migration("20211125152309_FixedModels")]
+    partial class FixedModels
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,6 +33,9 @@ namespace Adify.Migrations
                     b.Property<string>("AnalyticsId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int?>("CampaignId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
@@ -45,16 +48,13 @@ namespace Adify.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserEntityId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("AnalyticsId");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("CampaignId");
 
-                    b.HasIndex("UserEntityId");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Ad");
                 });
@@ -64,15 +64,32 @@ namespace Adify.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Clicks")
-                        .HasColumnType("int");
+                    b.HasKey("Id");
 
-                    b.Property<int>("Views")
+                    b.ToTable("Analytics");
+                });
+
+            modelBuilder.Entity("Adify.Models.Campaign", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DurationInDays")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("analyticsId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("budget")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Analytics");
+                    b.HasIndex("analyticsId");
+
+                    b.ToTable("Campaign");
                 });
 
             modelBuilder.Entity("Adify.Models.Category", b =>
@@ -93,31 +110,50 @@ namespace Adify.Migrations
                     b.ToTable("Category");
                 });
 
-            modelBuilder.Entity("Adify.Models.UserEntity", b =>
+            modelBuilder.Entity("Adify.Models.Click", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Company")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("AnalyticsId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("Created")
+                    b.Property<DateTime>("ClickedTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
+                    b.Property<string>("IP")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserEntity");
+                    b.HasIndex("AnalyticsId");
+
+                    b.ToTable("Click");
+                });
+
+            modelBuilder.Entity("Adify.Models.View", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("AnalyticsId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("IP")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ViewedTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AnalyticsId");
+
+                    b.ToTable("View");
                 });
 
             modelBuilder.Entity("Adify.Models.Ad", b =>
@@ -126,13 +162,34 @@ namespace Adify.Migrations
                         .WithMany()
                         .HasForeignKey("AnalyticsId");
 
+                    b.HasOne("Adify.Models.Campaign", null)
+                        .WithMany("ads")
+                        .HasForeignKey("CampaignId");
+
                     b.HasOne("Adify.Models.Category", "Category")
                         .WithMany("ads")
                         .HasForeignKey("CategoryId");
+                });
 
-                    b.HasOne("Adify.Models.UserEntity", null)
-                        .WithMany("Ads")
-                        .HasForeignKey("UserEntityId");
+            modelBuilder.Entity("Adify.Models.Campaign", b =>
+                {
+                    b.HasOne("Adify.Models.Analytics", "analytics")
+                        .WithMany()
+                        .HasForeignKey("analyticsId");
+                });
+
+            modelBuilder.Entity("Adify.Models.Click", b =>
+                {
+                    b.HasOne("Adify.Models.Analytics", null)
+                        .WithMany("Clicks")
+                        .HasForeignKey("AnalyticsId");
+                });
+
+            modelBuilder.Entity("Adify.Models.View", b =>
+                {
+                    b.HasOne("Adify.Models.Analytics", null)
+                        .WithMany("Views")
+                        .HasForeignKey("AnalyticsId");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Threading.Tasks;
-using Adify.Models;
 
 namespace Adify.Models
 {
-    public class Analytics
+    public class View
     {
         [Key]
         public string Id {  get; set; }
-        public ICollection<Click> Clicks {  get; set; }
-        public ICollection<View> Views {  get; set; }
+
+        [Required]
+        public DateTime ViewedTime {  get; set; }
+
+        [Required]
+        public string IP {  get; set; }
     }
 }
