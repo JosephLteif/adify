@@ -150,3 +150,13 @@ C:\Users\harm\source\repos\AdvancedProjectCMS\AdvancedProjectCMS\bin\Debug\netco
 C:\Users\harm\source\repos\AdvancedProjectCMS\AdvancedProjectCMS\obj\Debug\netcoreapp3.0\AdvancedProjectCMS.Views.pdb
 C:\Users\harm\source\repos\AdvancedProjectCMS\AdvancedProjectCMS\obj\Debug\netcoreapp3.0\AdvancedProjectCMS.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\harm\source\repos\AdvancedProjectCMS\AdvancedProjectCMS\bin\Debug\netcoreapp3.0\RestSharp.dll
+C:\Users\harm\Desktop\adify\AdifyAuthentication\AdvancedProjectCMS\obj\Debug\netcoreapp3.0\AdvancedProjectCMS.csprojAssemblyReference.cache
+C:\Users\harm\Desktop\adify\AdifyAuthentication\AdvancedProjectCMS\obj\Debug\netcoreapp3.0\staticwebassets\AdvancedProjectCMS.StaticWebAssets.Manifest.cache
+C:\Users\harm\Desktop\adify\AdifyAuthentication\AdvancedProjectCMS\obj\Debug\netcoreapp3.0\staticwebassets\AdvancedProjectCMS.StaticWebAssets.xml
+C:\Users\harm\Desktop\adify\AdifyAuthentication\AdvancedProjectCMS\obj\Debug\netcoreapp3.0\AdvancedProjectCMS.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\harm\Desktop\adify\AdifyAuthentication\AdvancedProjectCMS\obj\Debug\netcoreapp3.0\AdvancedProjectCMS.RazorAssemblyInfo.cache
+C:\Users\harm\Desktop\adify\AdifyAuthentication\AdvancedProjectCMS\obj\Debug\netcoreapp3.0\AdvancedProjectCMS.RazorAssemblyInfo.cs
+C:\Users\harm\Desktop\adify\AdifyAuthentication\AdvancedProjectCMS\obj\Debug\netcoreapp3.0\AdvancedProjectCMS.AssemblyInfoInputs.cache
+C:\Users\harm\Desktop\adify\AdifyAuthentication\AdvancedProjectCMS\obj\Debug\netcoreapp3.0\AdvancedProjectCMS.AssemblyInfo.cs
+C:\Users\harm\Desktop\adify\AdifyAuthentication\AdvancedProjectCMS\obj\Debug\netcoreapp3.0\AdvancedProjectCMS.dll
+C:\Users\harm\Desktop\adify\AdifyAuthentication\AdvancedProjectCMS\obj\Debug\netcoreapp3.0\AdvancedProjectCMS.pdb

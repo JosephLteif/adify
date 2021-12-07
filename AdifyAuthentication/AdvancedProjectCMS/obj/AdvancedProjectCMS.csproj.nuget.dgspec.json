@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\harm\\source\\repos\\AdvancedProjectCMS\\AdvancedProjectCMS\\AdvancedProjectCMS.csproj": {}
+    "C:\\Users\\harm\\Desktop\\adify\\AdifyAuthentication\\AdvancedProjectCMS\\AdvancedProjectCMS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\harm\\source\\repos\\AdvancedProjectCMS\\AdvancedProjectCMS\\AdvancedProjectCMS.csproj": {
+    "C:\\Users\\harm\\Desktop\\adify\\AdifyAuthentication\\AdvancedProjectCMS\\AdvancedProjectCMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\harm\\source\\repos\\AdvancedProjectCMS\\AdvancedProjectCMS\\AdvancedProjectCMS.csproj",
+        "projectUniqueName": "C:\\Users\\harm\\Desktop\\adify\\AdifyAuthentication\\AdvancedProjectCMS\\AdvancedProjectCMS.csproj",
         "projectName": "AdvancedProjectCMS",
-        "projectPath": "C:\\Users\\harm\\source\\repos\\AdvancedProjectCMS\\AdvancedProjectCMS\\AdvancedProjectCMS.csproj",
+        "projectPath": "C:\\Users\\harm\\Desktop\\adify\\AdifyAuthentication\\AdvancedProjectCMS\\AdvancedProjectCMS.csproj",
         "packagesPath": "C:\\Users\\harm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\harm\\source\\repos\\AdvancedProjectCMS\\AdvancedProjectCMS\\obj\\",
+        "outputPath": "C:\\Users\\harm\\Desktop\\adify\\AdifyAuthentication\\AdvancedProjectCMS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\harm\\AppData\\Roaming\\NuGet\\NuGet.Config",

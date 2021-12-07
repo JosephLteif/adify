@@ -46,7 +46,7 @@ namespace AdvancedProjectCMS.Controllers
                 IRestResponse response = client.Execute(request);
 
                 Console.WriteLine(response.Content);
-                return Ok(response)
+                return Ok(response);
                 //return RedirectToAction(nameof(Index));
             }
             catch
