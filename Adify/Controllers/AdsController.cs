@@ -27,6 +27,16 @@ namespace Adify.Controllers
             return await _context.Ad.ToListAsync();
         }
 
+        // GET: api/Ads/sdk/getAd
+        [HttpGet("sdk/getAd")]
+        public async Task<ActionResult<Ad>> GetAdSDK()
+        {
+            var random = new Random();
+            List<Ad> ads = await _context.Ad.ToListAsync();
+            int index = random.Next(ads.Count);
+            return ads[index];
+        }
+
         // GET: api/Ads/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Ad>> GetAd(int id)

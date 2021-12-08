@@ -14,6 +14,7 @@ namespace Adify.Models
         public string Description {  get; set; }
         public string ImageUrl {  get; set; }
         public string AdUrl {  get; set; }
+        public bool DidPass { get; set; }
         public Category Category {  get; set; }
         public Analytics Analytics {  get; set; }
     }
