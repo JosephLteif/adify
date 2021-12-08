@@ -14,10 +14,12 @@ namespace Adify.Controllers
     public class AdsController : ControllerBase
     {
         private readonly DbContext _context;
+        private IHttpContextAccessor _accessor;
 
-        public AdsController(DbContext context)
+        public AdsController(DbContext context, IHttpContextAccessor accessor)
         {
             _context = context;
+            _accessor = accessor;
         }
 
         // GET: api/Ads
@@ -32,8 +34,15 @@ namespace Adify.Controllers
         public async Task<ActionResult<Ad>> GetAdSDK()
         {
             var random = new Random();
+            var ip = _accessor.HttpContext?.Connection?.RemoteIpAddress?.ToString();
             List<Ad> ads = await _context.Ad.ToListAsync();
             int index = random.Next(ads.Count);
+            Ad ad = ads[index];
+            View view = new View()
+            {
+                IP = ip,
+            };
+            ad.Analytics.Views.Add(view);
             return ads[index];
         }
 
