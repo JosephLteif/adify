@@ -9,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using AdvancedProjectCMS.Models;
+using System.Net;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Http;
 
 namespace AdvancedProjectCMS
 {
@@ -37,7 +40,22 @@ namespace AdvancedProjectCMS
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler(
+                    options =>
+                    {
+                        options.Run(
+                            async context =>
+                            {
+                                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                                var ex = context.Features.Get<IExceptionHandlerFeature>();
+                                if (ex != null)
+                                {
+                                    await context.Response.WriteAsync(ex.Error.Message);
+                                }
+                            }
+                        );
+                    }
+                );
             }
             app.UseStaticFiles();
             app.UseCors( m => m.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
