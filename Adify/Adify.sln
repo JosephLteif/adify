@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adify", "Adify.csproj", "{BBA90C24-12C3-4C20-93D8-DBDEC4191B42}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedProjectCMS", "..\AdifyAuthentication\AdvancedProjectCMS\AdvancedProjectCMS.csproj", "{BDFE64B2-0866-4010-B43B-65894250642F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BBA90C24-12C3-4C20-93D8-DBDEC4191B42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBA90C24-12C3-4C20-93D8-DBDEC4191B42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBA90C24-12C3-4C20-93D8-DBDEC4191B42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDFE64B2-0866-4010-B43B-65894250642F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFE64B2-0866-4010-B43B-65894250642F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFE64B2-0866-4010-B43B-65894250642F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFE64B2-0866-4010-B43B-65894250642F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
