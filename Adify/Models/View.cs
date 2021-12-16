@@ -11,8 +11,8 @@ namespace Adify.Models
         [Key]
         public string Id {  get; set; }
 
-        //[Required]
-        //public DateTime ViewedTime {  get; set; }
+        [Required]
+        public DateTime ViewedTime { get; set; }
 
         [Required]
         public string IP {  get; set; }

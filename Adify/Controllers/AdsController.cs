@@ -35,14 +35,22 @@ namespace Adify.Controllers
         {
             var random = new Random();
             var ip = _accessor.HttpContext?.Connection?.RemoteIpAddress?.ToString();
-            List<Ad> ads = await _context.Ad.ToListAsync();
+            List<Ad> ads = await _context.Ad
+                .Include(p => p.Analytics).ThenInclude(p => p.Clicks)
+                .Include(p => p.Analytics).ThenInclude(p => p.Views)
+                .ToListAsync();
             int index = random.Next(ads.Count);
             Ad ad = ads[index];
+            List<View> views = await _context.View.ToListAsync();
+            int viewCount = views.Count;
             View view = new View()
             {
+                Id = (viewCount+1).ToString(),
                 IP = ip,
+                ViewedTime = DateTime.Now,
             };
             ad.Analytics.Views.Add(view);
+            _context.SaveChanges();
             return ads[index];
         }
 
