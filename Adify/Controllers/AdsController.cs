@@ -29,6 +29,15 @@ namespace Adify.Controllers
             return await _context.Ad.ToListAsync();
         }
 
+        // GET: api/Ads/getAdsById/{Id}
+        [HttpGet("getAdsById/{Id}")]
+        public async Task<ActionResult<IEnumerable<Ad>>> GetAdsByCampaignId(int Id)
+        {
+            var Campaign = await _context.Campaign.Include(p => p.Ads).Where(p => p.Id == Id).FirstOrDefaultAsync();
+            var result = Campaign.Ads.ToList();
+            return result;
+        }
+
         // GET: api/Ads/sdk/getAd
         [HttpGet("sdk/getAd")]
         public async Task<ActionResult<Ad>> GetAdSDK()

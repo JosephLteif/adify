@@ -63,7 +63,6 @@ E:\Adify\Adify\obj\Debug\netcoreapp3.0\Adify.MvcApplicationPartsAssemblyInfo.cac
 E:\Adify\Adify\obj\Debug\netcoreapp3.0\scopedcss\bundle\Adify.styles.css
 E:\Adify\Adify\obj\Debug\netcoreapp3.0\staticwebassets\Adify.StaticWebAssets.Manifest.cache
 E:\Adify\Adify\obj\Debug\netcoreapp3.0\Adify.RazorTargetAssemblyInfo.cache
-E:\Adify\Adify\obj\Debug\netcoreapp3.0\Adify.csproj.CopyComplete
 E:\Adify\Adify\obj\Debug\netcoreapp3.0\Adify.dll
 E:\Adify\Adify\obj\Debug\netcoreapp3.0\Adify.pdb
 E:\Adify\Adify\obj\Debug\netcoreapp3.0\Adify.genruntimeconfig.cache
