@@ -29,7 +29,7 @@ namespace Adify
         {
             services.AddHttpContextAccessor();
             services.AddControllers();
-
+            services.AddSwaggerGen();
             services.AddDbContext<DbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DbContext")));
         }
@@ -42,6 +42,8 @@ namespace Adify
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(m => m.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -51,6 +53,12 @@ namespace Adify
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Test1 Api v1");
             });
         }
     }
