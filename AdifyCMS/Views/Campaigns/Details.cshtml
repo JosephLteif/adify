@@ -36,6 +36,9 @@
         </dd>
     </dl>
 
+<p>
+    <a asp-controller="Ads" asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -79,10 +82,10 @@
                 @Html.DisplayFor(modelItem => item.AdUrl)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Analytics.Views.Count)
+                @item.Analytics.Views.Count
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Analytics.Clicks.Count)
+                @item.Analytics.Clicks.Count
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DidPass)

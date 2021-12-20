@@ -32,7 +32,10 @@ namespace AdifyCMS.Controllers
                 return NotFound();
             }
 
-            var campaign = await _context.Campaign.Include(p => p.Ads)
+            var campaign = await _context.Campaign
+                .Include(p => p.Ads).ThenInclude(p => p.Analytics).ThenInclude(p => p.Clicks)
+                .Include(p => p.Ads).ThenInclude(p => p.Analytics).ThenInclude(p => p.Views)
+                .Include(p => p.Ads)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (campaign == null)
             {
