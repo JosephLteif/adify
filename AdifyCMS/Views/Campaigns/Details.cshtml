@@ -4,6 +4,8 @@
     ViewData["Title"] = "Details";
 }
 
+<meta http-equiv="refresh" content="0; url=" />
+
 <h1>Details</h1>
 
 <div>
@@ -79,7 +81,7 @@
                 @Html.DisplayFor(modelItem => item.ImageUrl)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AdUrl)
+                <a href="@item.AdUrl" target="_blank">Link</a>
             </td>
             <td>
                 @item.Analytics.Views.Count 
