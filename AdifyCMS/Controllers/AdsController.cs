@@ -21,7 +21,11 @@ namespace AdifyCMS.Controllers
         // GET: Ads
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Ad.ToListAsync());
+            return View(await _context.Ad
+                .Include(p => p.Analytics)
+                .Include(p => p.Analytics).ThenInclude(p => p.Views)
+                .Include(p => p.Analytics).ThenInclude(p => p.Clicks)
+                .ToListAsync());
         }
 
         // GET: Ads/Details/5
@@ -43,8 +47,10 @@ namespace AdifyCMS.Controllers
         }
 
         // GET: Ads/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var campaigns = _context.Campaign.ToList();
+            ViewBag.Campaigns = campaigns;
             return View();
         }
 
@@ -53,15 +59,31 @@ namespace AdifyCMS.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,ImageUrl,AdUrl,DidPass")] Ad ad)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,ImageUrl,AdUrl,CampaignId")] AdViewModel ad)
         {
+            Ad adtemp = new Ad();
+            adtemp.AdUrl = ad.AdUrl;
+            adtemp.Id = ad.Id;
+            adtemp.Analytics = new Analytics()
+            {
+                Id = (int.Parse(_context.Analytics
+                .OrderByDescending(a => a.Id)
+                .First().Id) + 1).ToString(),
+            };
+            adtemp.Description = ad.Description;
+            adtemp.DidPass = false;
+            adtemp.ImageUrl = ad.ImageUrl;
+            adtemp.Title = ad.Title;
             if (ModelState.IsValid)
             {
-                _context.Add(ad);
+                Campaign campaign = _context.Campaign.Where(p => p.Id == int.Parse(ad.CampaignId))
+                    .Include(p => p.Ads).FirstOrDefault();
+                campaign.Ads.Add(adtemp);
+                _context.Add(adtemp);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Campaigns");
             }
-            return View(ad);
+            return View(adtemp);
         }
 
         // GET: Ads/Edit/5
@@ -85,7 +107,7 @@ namespace AdifyCMS.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,ImageUrl,AdUrl,DidPass")] Ad ad)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,ImageUrl,AdUrl")] Ad ad)
         {
             if (id != ad.Id)
             {
@@ -138,7 +160,20 @@ namespace AdifyCMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var ad = await _context.Ad.FindAsync(id);
+            var ad = await _context.Ad
+                .Include(p => p.Analytics).Where(p => p.Id == id)
+                .Include(p => p.Analytics).ThenInclude(p => p.Views)
+                .Include(p => p.Analytics).ThenInclude(p => p.Clicks)
+                .FirstOrDefaultAsync();
+            foreach (var view in ad.Analytics.Views)
+            {
+                _context.View.Remove(view);
+            }
+            foreach (var click in ad.Analytics.Clicks)
+            {
+                _context.Click.Remove(click);
+            }
+            _context.Analytics.Remove(ad.Analytics);
             _context.Ad.Remove(ad);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

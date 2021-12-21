@@ -33,14 +33,25 @@ namespace AdifyCMS.Controllers
             }
 
             var campaign = await _context.Campaign
-                .Include(p => p.Ads).ThenInclude(p => p.Analytics).ThenInclude(p => p.Clicks)
+                .Include(p => p.Ads).ThenInclude(p => p.Analytics)
                 .Include(p => p.Ads).ThenInclude(p => p.Analytics).ThenInclude(p => p.Views)
+                .Include(p => p.Ads).ThenInclude(p => p.Analytics).ThenInclude(p => p.Clicks)
                 .Include(p => p.Ads)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .Where(p => p.Id == id)
+                .FirstOrDefaultAsync();
+
             if (campaign == null)
             {
                 return NotFound();
             }
+            //foreach (var ad in campaign.Ads)
+            //{
+            //    if(ad.Analytics.Views == null)
+            //    {
+            //        ad.Analytics.Views = 0;
+            //    }
+
+            //}
 
             return View(campaign);
         }
@@ -142,10 +153,24 @@ namespace AdifyCMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var campaign = await _context.Campaign.Include(p => p.Ads).Where(p => p.Id == id).FirstOrDefaultAsync();
+            var campaign = await _context.Campaign
+                .Include(p => p.Ads).Where(p => p.Id == id)
+                .Include(p => p.Ads).ThenInclude(p => p.Analytics)
+                .Include(p => p.Ads).ThenInclude(p => p.Analytics).ThenInclude(p => p.Views)
+                .Include(p => p.Ads).ThenInclude(p => p.Analytics).ThenInclude(p => p.Clicks)
+                .FirstOrDefaultAsync();
             foreach(var ad in campaign.Ads)
             {
                 _context.Ad.Remove(ad);
+                foreach (var view in ad.Analytics.Views)
+                {
+                    _context.View.Remove(view);
+                }
+                foreach (var click in ad.Analytics.Clicks)
+                {
+                    _context.Click.Remove(click);
+                }
+                _context.Analytics.Remove(ad.Analytics);
             }
             _context.Campaign.Remove(campaign);
             await _context.SaveChangesAsync();

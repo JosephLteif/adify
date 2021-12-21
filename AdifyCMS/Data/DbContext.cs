@@ -15,4 +15,10 @@ using AdifyCMS.Models;
         public DbSet<AdifyCMS.Models.Campaign> Campaign { get; set; }
 
         public DbSet<AdifyCMS.Models.Ad> Ad { get; set; }
-    }
+
+        public DbSet<AdifyCMS.Models.Analytics> Analytics { get; set; }
+
+        public DbSet<AdifyCMS.Models.View> View { get; set; }
+
+        public DbSet<AdifyCMS.Models.Click> Click { get; set; }
+}
