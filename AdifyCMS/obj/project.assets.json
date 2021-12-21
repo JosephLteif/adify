@@ -5793,19 +5793,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\joelt\\.nuget\\packages\\": {}
+    "C:\\Users\\harm\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Adify\\AdifyCMS\\AdifyCMS.csproj",
+      "projectUniqueName": "C:\\Users\\harm\\Desktop\\adify\\AdifyCMS\\AdifyCMS.csproj",
       "projectName": "AdifyCMS",
-      "projectPath": "E:\\Adify\\AdifyCMS\\AdifyCMS.csproj",
-      "packagesPath": "C:\\Users\\joelt\\.nuget\\packages\\",
-      "outputPath": "E:\\Adify\\AdifyCMS\\obj\\",
+      "projectPath": "C:\\Users\\harm\\Desktop\\adify\\AdifyCMS\\AdifyCMS.csproj",
+      "packagesPath": "C:\\Users\\harm\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\harm\\Desktop\\adify\\AdifyCMS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\joelt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\harm\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5817,7 +5817,6 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
-          "targetAlias": "netcoreapp3.0",
           "projectReferences": {}
         }
       },
@@ -5829,7 +5828,6 @@
     },
     "frameworks": {
       "netcoreapp3.0": {
-        "targetAlias": "netcoreapp3.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -5860,24 +5858,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.0.1, 3.0.1]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.0.3, 3.0.3]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[3.0.0, 3.0.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[3.0.0, 3.0.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -5886,7 +5866,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.7.21379.14\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
