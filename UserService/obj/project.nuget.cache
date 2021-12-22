@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x4wYUsK9p38Ased2wtpMj5JqDqPFQNK36Xy4PJwFTK9oY/N5JiK19q0yk0gtbPy38dKOORbKm5ap1HUm37HbQA==",
+  "dgSpecHash": "/rjZw3t4ZkzhqbujMQZSdY4qDIHMpzIa5uFd/g/w89dZTXGRZ59s8w09N8UGg1UuJoZ3hOr+Rpv2S0/hxnOR6Q==",
   "success": true,
-  "projectFilePath": "E:\\Adify\\UserService\\AdService.csproj",
+  "projectFilePath": "E:\\Adify\\UserService\\AdifyIdentityService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joelt\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
     "C:\\Users\\joelt\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.0.3\\microsoft.aspnetcore.authentication.jwtbearer.3.0.3.nupkg.sha512",

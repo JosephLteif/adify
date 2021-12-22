@@ -8661,9 +8661,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Adify\\UserService\\AdService.csproj",
-      "projectName": "AdService",
-      "projectPath": "E:\\Adify\\UserService\\AdService.csproj",
+      "projectUniqueName": "E:\\Adify\\UserService\\AdifyIdentityService.csproj",
+      "projectName": "AdifyIdentityService",
+      "projectPath": "E:\\Adify\\UserService\\AdifyIdentityService.csproj",
       "packagesPath": "C:\\Users\\joelt\\.nuget\\packages\\",
       "outputPath": "E:\\Adify\\UserService\\obj\\",
       "projectStyle": "PackageReference",

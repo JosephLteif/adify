@@ -276,7 +276,6 @@ E:\Adify\UserService\obj\Debug\netcoreapp3.0\AdService.MvcApplicationPartsAssemb
 E:\Adify\UserService\obj\Debug\netcoreapp3.0\scopedcss\bundle\AdService.styles.css
 E:\Adify\UserService\obj\Debug\netcoreapp3.0\staticwebassets\AdService.StaticWebAssets.Manifest.cache
 E:\Adify\UserService\obj\Debug\netcoreapp3.0\AdService.RazorTargetAssemblyInfo.cache
-E:\Adify\UserService\obj\Debug\netcoreapp3.0\AdService.csproj.CopyComplete
 E:\Adify\UserService\obj\Debug\netcoreapp3.0\AdService.dll
 E:\Adify\UserService\obj\Debug\netcoreapp3.0\AdService.pdb
 E:\Adify\UserService\obj\Debug\netcoreapp3.0\AdService.genruntimeconfig.cache
