@@ -21,5 +21,7 @@ namespace AdifyCMS.Models
         public Analytics Analytics {  get; set; }
 
         public ICollection<Ad> Ads {  get; set; }
+
+        public string userid { get; set; }
     }
 }

@@ -21,4 +21,6 @@ using AdifyCMS.Models;
         public DbSet<AdifyCMS.Models.View> View { get; set; }
 
         public DbSet<AdifyCMS.Models.Click> Click { get; set; }
+
+        public DbSet<AdifyCMS.Models.User> User { get; set; }
 }

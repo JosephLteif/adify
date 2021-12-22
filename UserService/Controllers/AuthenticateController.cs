@@ -64,6 +64,7 @@ namespace AdifyIdentityService.Controllers
                 {
                     user = user.UserName,
                     token = new JwtSecurityTokenHandler().WriteToken(token),
+                    userid = user.Id,
                     expiration = token.ValidTo,
                     status ="Success"
                 });;
