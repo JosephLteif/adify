@@ -54,9 +54,13 @@
               "target": "Package",
               "version": "[3.1.21, )"
             },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[3.0.0, )"
             }
           },
           "imports": [
