@@ -21,11 +21,23 @@ namespace AdifyCMS.Controllers
         // GET: Ads
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Ad
+            var campaigns = await _context.Campaign.Include(p => p.Ads).Where(p => p.userid == TempData.Peek("userid")).ToListAsync();
+            List<Ad> ads = new List<Ad>();
+            foreach (var campaign in campaigns)
+            {
+                foreach (var ad in campaign.Ads)
+                {
+                Ad adtemp = await _context.Ad
                 .Include(p => p.Analytics)
                 .Include(p => p.Analytics).ThenInclude(p => p.Views)
                 .Include(p => p.Analytics).ThenInclude(p => p.Clicks)
-                .ToListAsync());
+                .Where(p => p.Id == ad.Id)
+                .FirstOrDefaultAsync();
+                ads.Add(adtemp);
+                }
+
+            }
+            return View(ads);
         }
 
         // GET: Ads/Details/5
@@ -49,7 +61,7 @@ namespace AdifyCMS.Controllers
         // GET: Ads/Create
         public async Task<IActionResult> Create()
         {
-            var campaigns = _context.Campaign.ToList();
+            var campaigns = _context.Campaign.Where(p => p.userid == TempData.Peek("userid")).ToList();
             ViewBag.Campaigns = campaigns;
             return View();
         }
@@ -64,11 +76,21 @@ namespace AdifyCMS.Controllers
             Ad adtemp = new Ad();
             adtemp.AdUrl = ad.AdUrl;
             adtemp.Id = ad.Id;
+            int analyticsid;
+            try
+            {
+                analyticsid = int.Parse(_context.Analytics
+                            .OrderByDescending(a => a.Id)
+                            .First().Id);
+            }
+            catch
+            {
+                analyticsid = 0;
+            }
+
             adtemp.Analytics = new Analytics()
             {
-                Id = (int.Parse(_context.Analytics
-                .OrderByDescending(a => a.Id)
-                .First().Id) + 1).ToString(),
+                Id = (analyticsid + 1).ToString(),
             };
             adtemp.Description = ad.Description;
             adtemp.DidPass = false;

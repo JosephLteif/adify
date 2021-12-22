@@ -21,7 +21,7 @@ namespace AdifyCMS.Controllers
         // GET: Campaigns
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Campaign.ToListAsync());
+            return View(await _context.Campaign.Where(p => p.userid == TempData.Peek("userid")).ToListAsync());
         }
 
         // GET: Campaigns/Details/5
