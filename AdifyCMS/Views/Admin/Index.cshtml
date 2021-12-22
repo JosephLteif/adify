@@ -1,0 +1,68 @@
+﻿@model IEnumerable<AdifyCMS.Models.Ad>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Admin Panel</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+               # of Views
+            </th>
+            <th>
+               # of Clicks
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DidPass)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+            <td>
+                @item.Analytics.Views.Count 
+            </td>
+            <td>
+                @item.Analytics.Clicks.Count
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DidPass)
+            </td>
+            <td>
+                <a asp-action="ToggleReview" asp-route-id="@item.Id">Toggle Review</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

@@ -158,3 +158,4 @@ E:\Adify\AdifyCMS\bin\Debug\netcoreapp3.0\ru\Microsoft.CodeAnalysis.Workspaces.r
 E:\Adify\AdifyCMS\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Adify\AdifyCMS\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Adify\AdifyCMS\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Adify\AdifyCMS\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Index.cshtml.g.cs
