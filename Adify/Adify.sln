@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adify", "Adify.csproj", "{B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdifyCMS", "..\AdifyCMS\AdifyCMS.csproj", "{33C8C084-C36E-4D26-B939-1810FE3A3A7E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdService", "..\UserService\AdService.csproj", "{241C525B-95A2-4BE1-BF01-8C342438D50F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdifyIdentityService", "..\UserService\AdifyIdentityService.csproj", "{241C525B-95A2-4BE1-BF01-8C342438D50F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

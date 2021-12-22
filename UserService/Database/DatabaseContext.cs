@@ -1,4 +1,4 @@
-﻿using AdService.Authentication;
+﻿using AdifyIdentityService.Authentication;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AdService.Database
+namespace AdifyIdentityService.Database
 {
     public class DatabaseContext  : IdentityDbContext<ApplicationUser>
     {

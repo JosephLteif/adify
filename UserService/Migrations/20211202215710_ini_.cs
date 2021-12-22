@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace AdService.Migrations
+namespace AdifyIdentityService.Migrations
 {
     public partial class ini_ : Migration
     {
