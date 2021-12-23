@@ -139,3 +139,9 @@ E:\Adify\UserService\obj\Debug\netcoreapp3.0\AdifyIdentityService.dll
 E:\Adify\UserService\obj\Debug\netcoreapp3.0\AdifyIdentityService.pdb
 E:\Adify\UserService\obj\Debug\netcoreapp3.0\AdifyIdentityService.genruntimeconfig.cache
 E:\Adify\UserService\obj\Debug\netcoreapp3.0\AdifyIdentityService.csproj.AssemblyReference.cache
+E:\Adify\UserService\bin\Debug\netcoreapp3.0\Microsoft.OpenApi.dll
+E:\Adify\UserService\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Adify\UserService\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Adify\UserService\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Adify\UserService\obj\Debug\netcoreapp3.0\AdifyIdentityService.MvcApplicationPartsAssemblyInfo.cs
+E:\Adify\UserService\obj\Debug\netcoreapp3.0\AdifyIdentityService.csproj.CopyComplete

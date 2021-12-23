@@ -46,6 +46,8 @@ namespace AdifyCMS.Controllers
 
         public IActionResult LoginView()
         {
+            TempData["isLoggedIn"] = "false";
+            TempData["isAdmin"] = "false";
             return View();
         }
 

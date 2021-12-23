@@ -68,6 +68,43 @@ namespace Adify.Controllers
             return ads[index];
         }
 
+        // GET: api/Ads/sdk/getAdUrl/4
+        [HttpGet("sdk/getAdUrl/{id}")]
+        public async Task<ActionResult<string>> GetAdUrlSDK(int id)
+        {
+            var ip = _accessor.HttpContext?.Connection?.RemoteIpAddress?.ToString();
+            Ad ad = await _context.Ad
+                .Include(p => p.Analytics).ThenInclude(p => p.Clicks)
+                .Where(p => p.DidPass == true)
+                .Where(p => p.Id == id)
+                .FirstOrDefaultAsync();
+            int clickCount = ad.Analytics.Clicks.Count;
+            Click click = new Click()
+            {
+                Id = (clickCount + 1),
+                IP = ip,
+                ClickedTime = DateTime.Now,
+            };
+            ad.Analytics.Clicks.Add(click);
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AdExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return ad.AdUrl;
+        }
+
         // GET: api/Ads/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Ad>> GetAd(int id)
