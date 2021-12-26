@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "WQci6Szi6G43YYjznyJtpNWPrVAzTGPc7qR9fr49eHfTM/8Jq9VK171tIy+n/zAtsf8sfMzWnXwa77+mV5I5iA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\harm\\source\\repos\\AdifySdk\\AdifySdk\\AdifySdk.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\harm\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\harm\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\harm\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\harm\\.nuget\\packages\\refit\\4.7.51\\refit.4.7.51.nupkg.sha512"
+  ],
+  "logs": []
+}

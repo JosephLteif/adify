@@ -1,0 +1,11 @@
+C:\Users\harm\source\repos\AdifySdk\AdifySdk\bin\Debug\netstandard2.0\AdifySdk.deps.json
+C:\Users\harm\source\repos\AdifySdk\AdifySdk\bin\Debug\netstandard2.0\AdifySdk.dll
+C:\Users\harm\source\repos\AdifySdk\AdifySdk\obj\Debug\netstandard2.0\AdifySdk.csprojAssemblyReference.cache
+C:\Users\harm\source\repos\AdifySdk\AdifySdk\obj\Debug\netstandard2.0\AdifySdk.AssemblyInfoInputs.cache
+C:\Users\harm\source\repos\AdifySdk\AdifySdk\obj\Debug\netstandard2.0\AdifySdk.AssemblyInfo.cs
+C:\Users\harm\source\repos\AdifySdk\AdifySdk\bin\Debug\netstandard2.0\AdifySdk.pdb
+C:\Users\harm\source\repos\AdifySdk\AdifySdk\bin\Debug\netstandard2.0\AdifyContracts.dll
+C:\Users\harm\source\repos\AdifySdk\AdifySdk\bin\Debug\netstandard2.0\AdifyContracts.pdb
+C:\Users\harm\source\repos\AdifySdk\AdifySdk\obj\Debug\netstandard2.0\AdifySdk.csproj.CopyComplete
+C:\Users\harm\source\repos\AdifySdk\AdifySdk\obj\Debug\netstandard2.0\AdifySdk.dll
+C:\Users\harm\source\repos\AdifySdk\AdifySdk\obj\Debug\netstandard2.0\AdifySdk.pdb
