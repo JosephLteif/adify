@@ -1,0 +1,7 @@
+C:\Users\harm\source\repos\AdifySdk\Adify.Contracts\bin\Debug\netstandard2.0\AdifyContracts.deps.json
+C:\Users\harm\source\repos\AdifySdk\Adify.Contracts\bin\Debug\netstandard2.0\AdifyContracts.dll
+C:\Users\harm\source\repos\AdifySdk\Adify.Contracts\bin\Debug\netstandard2.0\AdifyContracts.pdb
+C:\Users\harm\source\repos\AdifySdk\Adify.Contracts\obj\Debug\netstandard2.0\AdifyContracts.AssemblyInfoInputs.cache
+C:\Users\harm\source\repos\AdifySdk\Adify.Contracts\obj\Debug\netstandard2.0\AdifyContracts.AssemblyInfo.cs
+C:\Users\harm\source\repos\AdifySdk\Adify.Contracts\obj\Debug\netstandard2.0\AdifyContracts.dll
+C:\Users\harm\source\repos\AdifySdk\Adify.Contracts\obj\Debug\netstandard2.0\AdifyContracts.pdb

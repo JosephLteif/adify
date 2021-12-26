@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "/cExPnwu+hPRCg2pdHULiKcQZ9hynpQlM96TSdInDCXIkgvBB0EsLg15A0jiFrvrh7ZUvSdZ5IbjmUMcVRd1tg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\harm\\source\\repos\\AdifySdk\\Adify.Contracts\\AdifyContracts.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\harm\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\harm\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
