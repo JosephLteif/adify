@@ -31,7 +31,7 @@ namespace Adify.Controllers
 
         // GET: api/Ads/getAdsById/{Id}
         [HttpGet("getAdsById/{Id}")]
-        public async Task<ActionResult<IEnumerable<Ad>>> GetAdsByCampaignId(int Id)
+        public async Task<ActionResult<Campaign>> GetAdsByCampaignId(int Id)
         {
             var campain = await _context.Campaign.Include(p => p.Ads).Where(p => p.Id == Id).FirstOrDefaultAsync();
             //var result = Campaign.Ads.ToList();
@@ -70,8 +70,8 @@ namespace Adify.Controllers
         }
 
         // GET: api/Ads/sdk/getAdUrl/4
-        [HttpGet("sdk/getAdUrl/{id}")]
-        public async Task<ActionResult<string>> GetAdUrlSDK(int id)
+        [HttpGet("sdk/clickOnAd/{id}")]
+        public async Task<ActionResult<string>> ClickOnAd(int id)
         {
             var ip = _accessor.HttpContext?.Connection?.RemoteIpAddress?.ToString();
             Ad ad = await _context.Ad
@@ -82,17 +82,17 @@ namespace Adify.Controllers
             int clickCount = ad.Analytics.Clicks.Count;
             Click click = new Click()
             {
-                Id = (clickCount + 1),
                 IP = ip,
                 ClickedTime = DateTime.Now,
             };
             ad.Analytics.Clicks.Add(click);
-
+            // _context.SaveChanges();
             try
             {
-                await _context.SaveChangesAsync();
+                _context.SaveChanges();
+               // await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception e)
             {
                 if (!AdExists(id))
                 {
